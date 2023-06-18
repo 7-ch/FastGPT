@@ -36,6 +36,7 @@ export async function connectToDatabase(): Promise<void> {
   global.mongodb = 'connecting';
   try {
     mongoose.set('strictQuery', true);
+    console.log('mongo connecting--------', process.env.MONGODB_URI, process.env.MONGODB_NAME);
     global.mongodb = await mongoose.connect(process.env.MONGODB_URI as string, {
       bufferCommands: true,
       dbName: process.env.MONGODB_NAME,
@@ -45,7 +46,7 @@ export async function connectToDatabase(): Promise<void> {
     });
     console.log('mongo connected');
   } catch (error) {
-    console.log('error->', 'mongo connect error');
+    console.log('error->', 'mongo connect error', error);
     global.mongodb = null;
   }
 

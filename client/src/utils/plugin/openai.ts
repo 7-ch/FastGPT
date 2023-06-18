@@ -113,6 +113,7 @@ export function countOpenAIToken({
       `<|im_start|>assistant${roleSep}`
     ].join(msgSep);
   }
+
   function text2TokensLen(encoder: Tiktoken, inputText: string) {
     const encoding = encoder.encode(inputText, 'all');
     const segments: { text: string; tokens: { id: number; idx: number }[] }[] = [];
