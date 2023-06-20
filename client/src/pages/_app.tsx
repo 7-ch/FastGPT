@@ -41,7 +41,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Do Fast GPT</title>
+        <title>DogeAI</title>
         <meta name="description" content="" />
         <meta
           name="viewport"
