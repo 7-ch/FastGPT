@@ -199,12 +199,12 @@ const PhoneSliderBar = ({
           退出聊天
         </>
       </RenderButton>
-      <RenderButton onClick={onOpenWx}>
+      {/* <RenderButton onClick={onOpenWx}>
         <>
           <MyIcon name="wx" fill={'white'} w={'18px'} h={'18px'} mr={4} />
           交流群
         </>
-      </RenderButton>
+      </RenderButton> */}
 
       {/* wx 联系 */}
       {isOpenWx && <WxConcat onClose={onCloseWx} />}
