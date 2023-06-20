@@ -40,9 +40,9 @@ export async function connectToDatabase(): Promise<void> {
     global.mongodb = await mongoose.connect(process.env.MONGODB_URI as string, {
       bufferCommands: true,
       dbName: process.env.MONGODB_NAME,
-      maxPoolSize: 5,
-      minPoolSize: 1,
-      maxConnecting: 5
+      maxConnecting: Number(process.env.DB_MAX_LINK || 10),
+      maxPoolSize: Number(process.env.DB_MAX_LINK || 10),
+      minPoolSize: 5
     });
     console.log('mongo connected');
   } catch (error) {
@@ -69,3 +69,4 @@ export * from './models/shareChat';
 export * from './models/kb';
 export * from './models/inform';
 export * from './models/system';
+export * from './models/image';
