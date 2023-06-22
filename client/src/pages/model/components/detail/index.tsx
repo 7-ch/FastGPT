@@ -14,15 +14,11 @@ const Kb = dynamic(() => import('./components/Kb'), {
 const Share = dynamic(() => import('./components/Share'), {
   ssr: true
 });
-const API = dynamic(() => import('./components/API'), {
-  ssr: true
-});
 
 enum TabEnum {
   'settings' = 'settings',
   'kb' = 'kb',
-  'share' = 'share',
-  'API' = 'API'
+  'share' = 'share'
 }
 
 const ModelDetail = ({ modelId }: { modelId: string }) => {
@@ -74,7 +70,6 @@ const ModelDetail = ({ modelId }: { modelId: string }) => {
             { label: '配置', id: TabEnum.settings },
             ...(isOwner ? [{ label: '知识库', id: TabEnum.kb }] : []),
             { label: '分享', id: TabEnum.share },
-            { label: 'API', id: TabEnum.API },
             { label: '立即对话', id: 'startChat' }
           ]}
           size={isPc ? 'md' : 'sm'}
@@ -91,7 +86,6 @@ const ModelDetail = ({ modelId }: { modelId: string }) => {
       <Box flex={1}>
         {currentTab === TabEnum.settings && <Settings modelId={modelId} />}
         {currentTab === TabEnum.kb && <Kb modelId={modelId} />}
-        {currentTab === TabEnum.API && <API modelId={modelId} />}
         {currentTab === TabEnum.share && <Share modelId={modelId} />}
       </Box>
     </Flex>
