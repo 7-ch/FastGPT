@@ -787,7 +787,7 @@ const Chat = ({ modelId, chatId }: { modelId: string; chatId: string }) => {
                 </Flex>
               ))}
               {chatData.history.length === 0 && (
-                <Empty model={chatData.model} showChatProblem={true} />
+                <Empty model={chatData.model} showChatProblem={false} />
               )}
             </Box>
           </Box>
