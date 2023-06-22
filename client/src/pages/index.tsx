@@ -138,13 +138,6 @@ const Home = () => {
     }, 500);
   }, [isPc]);
 
-  useEffect(() => {
-    (async () => {
-      const { data: git } = await axios.get('https://api.github.com/repos/c121914yu/FastGPT');
-      setStar(git.stargazers_count);
-    })();
-  }, []);
-
   return (
     <Flex
       className={styles.home}
